@@ -65,11 +65,20 @@ def check_winner(idx, column):
             count = 0
 
     #check for diagonal win
-    for row in board:
-        for value in range(len(board)):
-            if row[value] == turn[0]:
-                count += 1
-    print "COUNT:", count            
+    for i in range(len(board)):
+        col = i
+        cols = [col, col+1, col+2, col+3]
+        rows = [0, 1, 2, 3]
+        value = 0
+        while value < 7:
+            try:
+                print board[value][value]
+                value += 1
+            except IndexError:
+                # we've hit the end of this col, break the loop and move to the next col
+                break
+
+
     switch_player(turn[0])
     place_piece(getMove())
 
