@@ -4,8 +4,6 @@ def large_cont_sum(arr):
 
     for i in range(1, len(arr)):
         currentSum += arr[i]
-        print currentSum
-        print largestSum
         if currentSum > largestSum:
             largestSum = currentSum
     print "Largest Sum:", largestSum
