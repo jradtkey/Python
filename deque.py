@@ -4,22 +4,18 @@ class Deque(object):
         self.items = []
 
     def addFront(self, item):
-        self.items.insert(0, item)
+        self.items.append(item)
 
     def addRear(self, item):
-        self.items.insert(len(self.items), item)
+        self.items.insert(0, item)
 
     def removeFront(self):
-        front = self.items[0]
-        self.items = self.items[1:]
-        print front
-        return front
+        return self.items.pop()
 
     def removeRear(self):
-        rear = self.items[len(self.items)-1]
-        self.items = self.items[:len(self.items)-1]
-        print rear
-        return rear
+        # possible:
+        #return self.items = self.items[1:]
+        return self.items.pop(0)
 
     def isEmpty(self):
         print self.items == []
@@ -37,3 +33,4 @@ d.addRear('world')
 d.size()
 print d.removeFront() + ' ' +  d.removeRear()
 d.size()
+d.isEmpty()
