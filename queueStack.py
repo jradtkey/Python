@@ -6,6 +6,7 @@ class Queue2Stacks(object):
 
     def enqueue(self, item):
         self.instack.append(item)
+        print self.instack
 
     def dequeue(self):
         if not self.outstack:
