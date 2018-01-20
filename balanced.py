@@ -4,6 +4,10 @@ def balance_check(s):
     arr2 = []
     arr3 = []
 
+    if len(s)%2 != 0:
+        print False
+        return False
+
     for i in range(len(s)):
         if s[i] == "(":
             arr1.append(s[i])
