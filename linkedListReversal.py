@@ -1,36 +1,36 @@
 class Node(object):
     def __init__(self, value):
         self.value = value
-        self.next = None
+        self.nextnode = None
 
 def reverse(head):
     current = head
     prev = None
     nextnode = None
     while current:
-        nextnode = current.next
-        current.next = prev
-        previous = current
+        nextnode = current.nextnode
+        current.nextnode = prev
+        prev = current
         current = nextnode
-    print previous
+    print prev
 
 a = Node(1)
 b = Node(2)
 c = Node(3)
 d = Node(4)
 
-a.next = b
-b.next = c
-c.next = d
+a.nextnode = b
+b.nextnode = c
+c.nextnode = d
 
-print a.next.value
-print b.next.value
-print c.next.value
+print a.nextnode.value
+print b.nextnode.value
+print c.nextnode.value
 
 
 
 reverse(a)
 
-print d.next.value
-print c.next.value
-print b.next.value
+print d.nextnode.value
+print c.nextnode.value
+print b.nextnode.value
