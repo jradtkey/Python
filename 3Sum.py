@@ -10,6 +10,9 @@ def threeSum(arr):
         if i == b:
             continue
         while b < len(arr):
+            print arr[i]
+            print arr[j]
+            print arr[b]
             if arr[i] + arr[j] + arr[b] == 0:
                 new.append(arr[i])
                 new.append(arr[j])
