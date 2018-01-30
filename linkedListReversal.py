@@ -4,15 +4,17 @@ class Node(object):
         self.nextnode = None
 
 def reverse(head):
-    current = head
     prev = None
+    current = head
     nextnode = None
     while current:
         nextnode = current.nextnode
         current.nextnode = prev
         prev = current
         current = nextnode
-    print prev
+
+    return prev
+
 
 a = Node(1)
 b = Node(2)
