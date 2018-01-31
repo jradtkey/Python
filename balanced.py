@@ -1,48 +1,24 @@
-def balance_check(s):
+def balance_check(bracket_string):
 
     arr1 = []
     arr2 = []
     arr3 = []
 
-    if len(s)%2 != 0:
+    if len(bracket_string)%2 != 0:
         print False
         return False
 
-    for i in range(len(s)):
-        if s[i] == "(":
-            arr1.append(s[i])
-        elif s[i] == ")":
+    for i in range(len(bracket_string)):
+        if bracket_string[i] == "(":
+            arr1.append(bracket_string[i])
+        elif bracket_string[i] == ")":
             if len(arr1) == 0:
                 print False
                 return False
             else:
                 arr1.pop()
-        elif s[i] == "[":
-            arr2.append(s[i])
-        elif s[i] == "]":
-            if len(arr2) == 0:
-                print False
-                return False
-            else:
-                arr2.pop()
-        elif s[i] == "{":
-            arr3.append(s[i])
-        elif s[i] == "}":
-            if len(arr3) == 0:
-                print False
-                return False
-            else:
-                arr3.pop()
-    print arr1
-    print arr2
-    print arr3
 
 
-    if len(arr1) > 0 or len(arr2) > 0 or len(arr3) > 0:
-        print False
-        return False
-    else:
-        print True
-        return True
+    print len(arr1)
 
-balance_check('[](){([[[]]])}(')
+balance_check('((())')
